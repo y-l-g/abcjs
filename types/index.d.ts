@@ -1248,6 +1248,7 @@ declare module 'abcjs' {
         options?: SynthOptions
         isLooping?: boolean
         isStarted?: boolean
+        seek(percent: number, unit?: ProgressUnit): void
 
 	}
 
