@@ -1244,6 +1244,7 @@ declare module 'abcjs' {
 		setWarp(percent: number): Promise<void>
 		download(fName: string): void
 		getAudioBuffer(): AudioBuffer | undefined
+		cursorControl?: CursorControl
 	}
 
 	export interface SynthSequenceClass {
