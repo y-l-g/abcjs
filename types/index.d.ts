@@ -1245,6 +1245,10 @@ declare module 'abcjs' {
 		download(fName: string): void
 		getAudioBuffer(): AudioBuffer | undefined
 		cursorControl?: CursorControl
+        options?: SynthOptions
+        isLooping?: boolean
+        isStarted?: boolean
+
 	}
 
 	export interface SynthSequenceClass {
@@ -1323,7 +1327,7 @@ declare module 'abcjs' {
 
 	export function numberOfTunes(abc: string) : number;
 	export function extractMeasures(abc: string) : Array<MeasureList>;
-	
+
 	export function strTranspose(originalAbc: string, visualObj: TuneObjectArray, steps: number): string;
 
 	//
