@@ -76,7 +76,7 @@ declare module 'abcjs' {
 	//
 	// Basic types
 	//
-	export type Selector = string | HTMLElement
+	export type Selector = string | HTMLElement | string[] | HTMLElement[]
 
 	type NumberFunction = () => number;
 
@@ -321,7 +321,7 @@ declare module 'abcjs' {
 		synthControl?: SynthObjectController;
 		el: Selector;
 		cursorControl?: CursorControl;
-		options?: SynthOptions;
+		options?: SynthOptions & SynthVisualOptions;
 	}
 
 	export interface EditorOptions {
@@ -387,6 +387,7 @@ declare module 'abcjs' {
 		displayPlay?: boolean;
 		displayProgress?: boolean;
 		displayWarp?: boolean;
+        displayClock?: boolean;
 	}
 
 	export type DownloadLabelFn = (visualObj: TuneObject, index: number) => string;
@@ -1151,7 +1152,7 @@ declare module 'abcjs' {
 		onReady?(): void
 		onStart?(): void
 		onFinished?(): void
-		onBeat?(beatNumber: number, totalBeats: number, totalTime: number): void
+		onBeat?(beatNumber: number, totalBeats: number, totalTime: number, position: NoteTimingEvent): void
 		onEvent?(event: NoteTimingEvent): void
 	}
 
