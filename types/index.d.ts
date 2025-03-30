@@ -1241,17 +1241,25 @@ declare module 'abcjs' {
 		pause(): void
 		toggleLoop(): void
 		restart(): void
-		setProgress(ev: number): void
+		setProgress(percent: number, totalTime: number): void
 		setWarp(percent: number): Promise<void>
 		download(fName: string): void
 		getAudioBuffer(): AudioBuffer | undefined
 		cursorControl?: CursorControl
         options?: SynthOptions
+        control?: AudioControl
+        timer?: AnimationOptions
         isLooping?: boolean
         isStarted?: boolean
+        isLoaded?: boolean
+        isLoading?: boolean
+        currentTempo?: number
+        midiBuffer?: MidiBuffer
         seek(percent: number, unit?: ProgressUnit): void
         visualObj: TuneObject
-
+        go(): Promise<SynthInitResponse>
+        destroy(): void
+        percent?: number
 	}
 
 	export interface SynthSequenceClass {
