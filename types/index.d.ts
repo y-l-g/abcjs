@@ -1250,6 +1250,7 @@ declare module 'abcjs' {
         isLooping?: boolean
         isStarted?: boolean
         seek(percent: number, unit?: ProgressUnit): void
+        visualObj: TuneObject
 
 	}
 
