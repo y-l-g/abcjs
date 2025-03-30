@@ -1222,6 +1222,15 @@ declare module 'abcjs' {
 		download(): string // returns audio buffer in wav format as a reference to a blob
 		getIsRunning(): boolean
 		getAudioBuffer(): AudioBuffer | undefined
+        audioBufferPossible?: boolean
+        directSource?: AudioBufferSourceNode
+        startTimeSec?: number
+        pausedTimeSec?: number
+        audioBuffers?: AudioBuffer[]
+        duration?: number
+        isRunning?: boolean 
+        options: MidiBufferOptions
+        pickupLength: number
 	}
 
 	export interface SynthInitResponse {
